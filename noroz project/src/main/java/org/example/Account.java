@@ -13,12 +13,6 @@ public class Account {
         this.age = age;
         this.username = username;
         this.password = password;
-        this.role = role;
-    }
-
-
-    public String getRole() {
-        return role;
     }
 
     public String getPassword() {
@@ -41,10 +35,6 @@ public class Account {
         this.name = name;
     }
 
-    public void setRole(String role) {
-        this.role = role;
-    }
-
     public void setPassword(String password) {
         this.password = password;
     }
@@ -57,12 +47,4 @@ public class Account {
         this.age = age;
     }
 }
-/*
-info should be save in jason
-parsing json to the aarry list of accounts
 
-sign up some users
-make array list of users info
-write the login method
-
-*/

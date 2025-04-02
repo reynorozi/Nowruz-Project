@@ -65,10 +65,28 @@ public class SignUp {
             Validpass = ValidUsername(Password);
         }
 
+        Account account ;
         System.out.print("Choose your Role:\n1.Artist.\n2.User\n");
         String Role = (scanner.nextInt() == 1) ? "Artist" : "User";
+        if("Artist".equals(Role)) {
+             account = new Artist();
+            System.out.println("Welcome  " + name);
+        }
+        else{
+            account = new User();
+            System.out.println("Welcome  " + name);
+            Userhomepage userhome = new Userhomepage();
+
+           userhome.displayuserHome((User) account);
+        }
+
+        account.setName(name);
+        account.setAge(age);
+        account.setUsername(Username);
+        account.setPassword(Password);
 
         JSONObject user = new JSONObject();
+
         user.put("Name", name);
         user.put("Age", age);
         user.put("Username", Username);
@@ -76,33 +94,25 @@ public class SignUp {
         user.put("Role",Role);
 
 
-
-
         JSONArray users = new JSONArray();
-        try {
 
-        JSONObject existingData = new JSONObject(new String(java.nio.file.Files.readAllBytes(java.nio.file.Paths.get("Data.json"))));
-        users = existingData.optJSONArray("Users");
+
+        JSONObject existingData = new JSONObject(File.ReadData());
+        users = existingData.optJSONArray("Accounts");
         if (users == null) {
            users = new JSONArray();
-        }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+
 
         users.put(user);
 
 
         JSONObject newData = new JSONObject();
-        newData.put("Users", users);
+        newData.put("Accounts", users);
 
-        try (FileWriter file = new FileWriter("Data.json")) {
-            file.write(newData.toString(4));
-            file.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        File.WriteData(newData);
 
         System.out.println("User signed up successfully!");
     }
+}
 }

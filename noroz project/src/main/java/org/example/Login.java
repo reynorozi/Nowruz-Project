@@ -1,38 +1,21 @@
 package org.example;
 
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.ArrayList;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+
 public class Login {
 
-    private ArrayList<Account> accounts;
+    private Parseinfo parseinfo;
 
-public void parsinfo() throws IOException {
+     public Login() {
+         parseinfo = new Parseinfo();
+     }
 
-accounts = new ArrayList<>();
-String Data = new String(Files.readAllBytes(Paths.get("Data.json")));
-JSONObject obj = new JSONObject(Data);
-JSONArray users = obj.getJSONArray("Users");
+    public void Login() throws IOException {
 
-for(int i = 0; i < users.length(); i++) {
+        ArrayList<Account> accounts =parseinfo.parsinfo();
 
-    JSONObject userobj = users.getJSONObject(i);
-    Account account = new Account();
-
-    account.setUsername(userobj.optString("Username"));
-    account.setPassword(userobj.optString("Password"));
-    account.setName(userobj.optString("Name"));
-    account.setAge(userobj.optInt("Age"));
-    account.setRole(userobj.optString("Role"));
-    accounts.add(account);
-    }
-
-}
-    public void Login() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("\n\n\n\n\n______________________Login_____________________");
 
@@ -68,12 +51,12 @@ for(int i = 0; i < users.length(); i++) {
                     passwordCorrect = true;
                     System.out.println("You are logged in!");
 
-                    if (account.getRole().equals("Artist")) {
-                        // go to the artist page
-                        System.out.println("Welcome Artist!");
+                    if (account instanceof Artist) {
+                        System.out.println("Welcome back " + account.getName());
                     } else {
-                        // go to the User page
-                        System.out.println("Welcome User!");
+                        System.out.println("Welcome back " + account.getName());
+                        Userhomepage user = new Userhomepage();
+                        user.displayuserHome((User) account);
                     }
                     break;
                 }
