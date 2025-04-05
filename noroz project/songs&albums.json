@@ -1,0 +1,50 @@
+{"Songs": {
+        "a": {
+            "Singer": "Micheal jackson",
+            "Song": "a",
+            "Lyric": "aa\n",
+            "Album": "Single",
+            "Genre": "q",
+            "View": 0,
+            "Release": "04/04/2025"
+        },
+        "check": {
+            "Singer": "Micheal jackson",
+            "Song": "check",
+            "Lyric": "d",
+            "Album": "Single",
+            "Genre": "aa",
+            "View": 0,
+            "Release": "04/04/2025"
+        },
+        "hello": {
+            "Singer": "Micheal jackson",
+            "Song": "hello",
+            "Lyric": "wewe",
+            "Album": "Hrnce",
+            "Genre": "Rock",
+            "View": 0,
+            "Release": "04/04/2025"
+        }
+    },
+    "Albums": {"shade": [
+        {
+            "Singer": "Micheal jackson",
+            "Song": "khoda",
+            "Lyric": "yoyo",
+            "Album": "shade",
+            "Genre": "rap",
+            "View": 0,
+            "Release": "04/04/2025"
+        },
+        {
+            "Singer": "Micheal jackson",
+            "Song": "",
+            "Lyric": "faghat",
+            "Album": "shade",
+            "Genre": "rap",
+            "View": 0,
+            "Release": "04/04/2025"
+        }
+    ]}
+}

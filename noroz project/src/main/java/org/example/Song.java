@@ -8,10 +8,10 @@ public  class Song {
     private String album;
     private String lyric;
     private String genre;
-    private int release;
+    private String release;
     private int view;
 
-    public Song(String name, String artist, String album, String lyric, String genre, int release, int view) {
+    public Song(String name, String artist, String album, String lyric, String genre, String release, int view) {
         this.name = name;
         this.artist = artist;
         this.album = album;
@@ -20,6 +20,7 @@ public  class Song {
         this.release = release;
         this.view = view;
     }
+
 
     public int getView() {
         return view;
@@ -349,10 +350,10 @@ public  class Song {
 
     public static  ArrayList<Song> getSongs() {
         ArrayList<Song> songs = new ArrayList<>();
-        Song song1 = new Song("Money", "Michael jackson", "m",money,"pop",1995,484123);
-        Song song2 = new Song("Die with Smile", "Lady Gaga", "single",DieWithSmile,"pop",2024,234);
-        Song song3 = new Song("My boy", "Taylor Swift", " The Tortured Poets Department",myboy,"pop",2024,25);
-        Song song4 = new Song("Monster","Michael jackson","s",monster,"pop",1999,456789);
+        Song song1 = new Song("Money", "Michael jackson", "m",money,"pop","1995",484123);
+        Song song2 = new Song("Die with Smile", "Lady Gaga", "single",DieWithSmile,"pop","2024",234);
+        Song song3 = new Song("My boy", "Taylor Swift", " The Tortured Poets Department",myboy,"pop","2024",25);
+        Song song4 = new Song("Monster","Michael jackson","s",monster,"pop","1999",456789);
 
         songs.add(song1);
         songs.add(song2);
@@ -375,6 +376,7 @@ public  class Song {
     view met
      */
 
+
     public String getArtist() {
         return artist;
     }
@@ -391,11 +393,11 @@ public  class Song {
         this.name = name;
     }
 
-    public int getRelease() {
+    public String getRelease() {
         return release;
     }
 
-    public void setRelease(int release) {
+    public void setRelease(String release) {
         this.release = release;
     }
 
