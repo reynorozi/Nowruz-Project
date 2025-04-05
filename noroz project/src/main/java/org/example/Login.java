@@ -53,6 +53,8 @@ public class Login {
 
                     if (account instanceof Artist) {
                         System.out.println("Welcome back " + account.getName());
+                        ArtistHomepage artisthome = new ArtistHomepage();
+                        artisthome.displayArtistHomepage((Artist) account);
                     } else {
                         System.out.println("Welcome back " + account.getName());
                         Userhomepage user = new Userhomepage();

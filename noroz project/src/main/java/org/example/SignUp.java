@@ -8,7 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class SignUp {
 
-//check the username is valid or not by using regex
+    //check the username is valid or not by using regex
     private boolean ValidUsername(String Username) {
 
         String regex = "^(?=.*[a-zA-Z])[a-zA-Z0-9._]{8,12}$";
@@ -27,9 +27,9 @@ public class SignUp {
 
         String regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*])[\\S]{8,}$";
         Pattern pattern = Pattern.compile(regex);
-        Matcher matcher =pattern.matcher(password);
+        Matcher matcher = pattern.matcher(password);
         if (!matcher.matches()) {
-            System.out.println("Invalid password!\nYour password must contain:\n✅ at least 8 characters\n✅has to include at least one uppercase letter, and at least a lowercase\n✅at least one number and at least a special char !@#$%^&*\n✅have no spaces" );
+            System.out.println("Invalid password!\nYour password must contain:\n✅ at least 8 characters\n✅has to include at least one uppercase letter, and at least a lowercase\n✅at least one number and at least a special char !@#$%^&*\n✅have no spaces");
             return false;
         } else {
             return true;
@@ -37,7 +37,6 @@ public class SignUp {
     }
 
     public void signUp() {
-
         Scanner scanner = new Scanner(System.in);
         System.out.println("\n\n\n\n\n______________________SignUp_____________________");
         System.out.print("Name: ");
@@ -62,22 +61,18 @@ public class SignUp {
         while (!Validpass) {
             System.out.print("Password: ");
             Password = scanner.nextLine();
-            Validpass = ValidUsername(Password);
+            Validpass = ValidPassword(Password);
         }
 
-        Account account ;
+        Account account;
         System.out.print("Choose your Role:\n1.Artist.\n2.User\n");
         String Role = (scanner.nextInt() == 1) ? "Artist" : "User";
-        if("Artist".equals(Role)) {
-             account = new Artist();
+        if ("Artist".equals(Role)) {
+            account = new Artist();
             System.out.println("Welcome  " + name);
-        }
-        else{
+        } else {
             account = new User();
             System.out.println("Welcome  " + name);
-            Userhomepage userhome = new Userhomepage();
-
-           userhome.displayuserHome((User) account);
         }
 
         account.setName(name);
@@ -85,34 +80,55 @@ public class SignUp {
         account.setUsername(Username);
         account.setPassword(Password);
 
-        JSONObject user = new JSONObject();
 
+
+        JSONObject user = new JSONObject();
         user.put("Name", name);
         user.put("Age", age);
         user.put("Username", Username);
         user.put("Password", Password);
-        user.put("Role",Role);
+        user.put("Role", Role);
+
+        if(Role == "Artist"){
+            user.put("Followers", new JSONArray());
+            user.put("Albums", new JSONArray());
+            user.put("Songs", new JSONArray());
+        }
+        else if(Role == "User"){
+
+        user.put("Comments", new JSONArray());
+        user.put("FollowingSongs", new JSONArray());
+        user.put("FollowingArtists", new JSONArray());
+        }
 
 
-        JSONArray users = new JSONArray();
+        JSONObject existingData;
+        try {
+            existingData = new JSONObject(File.ReadData());
+        } catch (Exception e) {
+            System.out.println("Error reading data! Creating new JSON object...");
+            existingData = new JSONObject();
+        }
 
+            JSONArray users = existingData.optJSONArray("Accounts");
+            if (users == null) {
+                users = new JSONArray();
+            }
 
-        JSONObject existingData = new JSONObject(File.ReadData());
-        users = existingData.optJSONArray("Accounts");
-        if (users == null) {
-           users = new JSONArray();
+            users.put(user);
+            existingData.put("Accounts", users);
 
+            System.out.println("Writing to file...");
+            File.WriteData(existingData);
+            System.out.println("Data written successfully!");
 
-
-        users.put(user);
-
-
-        JSONObject newData = new JSONObject();
-        newData.put("Accounts", users);
-
-        File.WriteData(newData);
-
-        System.out.println("User signed up successfully!");
+            if (account instanceof User) {
+                Userhomepage userhome = new Userhomepage();
+                userhome.displayuserHome((User) account);
+            }
+            if (account instanceof Artist) {
+                ArtistHomepage artisthome = new ArtistHomepage();
+                artisthome.displayArtistHomepage((Artist) account);
+            }
+        }
     }
-}
-}

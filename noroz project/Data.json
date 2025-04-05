@@ -1,83 +1,29 @@
 {"Accounts": [
     {
         "Role": "User",
-        "Username": "Mona19._",
-        "Comments": [
-            {
-                "comment": "stuning",
-                "Time": "01/04/2025",
-                "songname": "My boy"
-            },
-            {
-                "comment": "yoyo",
-                "Time": "01/04/2025",
-                "songname": "My boy"
-            },
-            {
-                "comment": "sdfgb",
-                "Time": "01/04/2025",
-                "songname": "My boy"
-            },
-            {
-                "comment": "asfcbv n",
-                "Time": "01/04/2025",
-                "songname": "My boy"
-            }
-        ],
-        "Age": 19,
-        "Name": "mona",
-        "Password": "Mona@19am"
-    },
-    {
-        "Role": "User",
-        "Username": "Homannam",
-        "Comments": [
-            {
-                "comment": "My boyyyy only breaks his fav toysssss",
-                "Time": "01/04/2025",
-                "songname": "My boy"
-            },
-            {
-                "comment": "Hi i think this lyric is not correct",
-                "Time": "01/04/2025",
-                "songname": "My boy"
-            }
-        ],
-        "Age": 23,
-        "Name": "homan",
-        "Password": "Ho@#man23"
-    },
-    {
-        "Role": "User",
-        "Username": "gholiiam",
-        "Age": 20,
-        "Name": "gholi",
-        "Password": "Gholi!@2004"
-    },
-    {
-        "Role": "User",
-        "Username": "reyhonhastam",
+        "Username": "Reyhaneam",
         "Comments": [{
-            "comment": "love it!",
-            "Time": "01/04/2025",
-            "songname": "My boy"
+            "comment": "just for check",
+            "Time": "04/04/2025",
+            "songname": "Die with Smile"
         }],
-        "Age": 11,
-        "Name": "reyhon",
-        "Password": "Rey#hastam1"
+        "FollowingSongs": [{
+            "song": "My boy",
+            "artist": "Taylor Swift"
+        }],
+        "Age": 18,
+        "FollowingArtists": [],
+        "Name": "rey",
+        "Password": "Reyh@ne06"
     },
     {
         "Role": "Artist",
-        "Username": "Zahra1993",
-        "Age": 32,
-        "Name": "Zahra",
-        "Password": "zAhra@9393"
-    },
-    {
-        "Role": "Artist",
-        "Username": "Fnorrr_.",
-        "Age": 25,
-        "Name": "Fnor",
-        "Password": "eFnor#222"
+        "Username": "MJnumone",
+        "Songs": [],
+        "Followers": [],
+        "Age": 60,
+        "Name": "Micheal jackson",
+        "Password": "MJmich@el09",
+        "Albums": []
     }
 ]}
