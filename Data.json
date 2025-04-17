@@ -1,0 +1,91 @@
+{"Accounts": [
+    {
+        "Role": "User",
+        "Username": "Reyhaneam",
+        "Comments": [
+            {
+                "comment": "just for check",
+                "Time": "04/04/2025",
+                "songname": "Die with Smile"
+            },
+            {
+                "comment": "AZIZAM🩷",
+                "Time": "07/04/2025",
+                "songname": "AZIZAM"
+            },
+            {
+                "comment": "AZIZAM",
+                "Time": "08/04/2025",
+                "songname": "AZIZAM"
+            },
+            {
+                "comment": "asdfghjkl",
+                "Time": "13/04/2025",
+                "songname": "Money"
+            },
+            {
+                "comment": "just beat it:))))",
+                "Time": "14/04/2025",
+                "songname": "Beat It"
+            },
+            {
+                "comment": "check",
+                "Time": "15/04/2025",
+                "songname": "AZIZAM"
+            },
+            {
+                "comment": "🩷😭😭🎶",
+                "Time": "16/04/2025",
+                "songname": "AZIZAM"
+            },
+            {
+                "comment": "khodaya:)",
+                "Time": "17/04/2025",
+                "songname": "wefgb"
+            }
+        ],
+        "FollowingSongs": [
+            {
+                "song": "My boy",
+                "artist": "Taylor Swift"
+            },
+            {
+                "song": "AZIZAM",
+                "artist": "ED Sheran"
+            }
+        ],
+        "Age": 18,
+        "FollowingArtists": [
+            "ED Sheran",
+            "Micheal jackson"
+        ],
+        "Name": "rey",
+        "Password": "Reyh@ne06"
+    },
+    {
+        "Role": "Artist",
+        "Username": "MJnumone",
+        "Followers": ["Reyhaneam"],
+        "Age": 60,
+        "Name": "Micheal jackson",
+        "Password": "MJmich@el09"
+    },
+    {
+        "Role": "Artist",
+        "Username": "EDSHEARN",
+        "Followers": [
+            "Reyhaneam",
+            "Hotannnn"
+        ],
+        "Age": 28,
+        "Name": "ED Sheran",
+        "Password": "Ed@29Sheran"
+    },
+    {
+        "Role": "Admin",
+        "Username": "AdmiNNN",
+        "Age": 34,
+        "Name": "Admin",
+        "Password": "Admin!Gen1us"
+    }
+]}
