@@ -87,7 +87,7 @@ public class Login {
                         EditRequestManager manager = new EditRequestManager();
 
                         AdminPage adminPage = new AdminPage(adminAccount, manager);
-                        adminPage.show(); // نمایش صفحه ادمین
+                        adminPage.show();
                     }
 
                     break;
