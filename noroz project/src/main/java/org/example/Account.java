@@ -1,18 +1,20 @@
 package org.example;
 
+//This class is the Account class, and its parent classes are User, Artist, and Admin.
+
 public class Account {
 
     private String name;
     private int age;
     private String username;
     private String password;
-    private String role;
 
-    public Account() {
+
+    public Account(String username,int age, String password, String name) {
         this.name = name;
         this.age = age;
-        this.username = username;
-        this.password = password;
+        this.username =username;
+        this.password =password;
     }
 
     public String getPassword() {
