@@ -103,6 +103,7 @@ public class Artistpublicprofile implements Page {
             case 'R' -> previousPage.show();  // Return to previous page
             default -> System.out.println("Invalid option. Try F, S, or A.");
         }
+        previousPage.show();
     }
 
     // Method to retrieve all songs from the artist and their albums
